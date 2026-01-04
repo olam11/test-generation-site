@@ -96,7 +96,7 @@ template = env.get_template('templates/page.html')
 
 rendered = template.render(items=items_for_template)
 
-with open('output.html', 'w', encoding='utf-8') as f:
+with open('index.html', 'w', encoding='utf-8') as f:
     f.write(rendered)
 
 print("output.html généré — ouvre-le dans ton navigateur")
