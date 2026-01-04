@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Liste des items</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .item { margin-bottom: 24px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+        .thumb { max-width: 240px; max-height: 240px; display:block; margin-top:8px; object-fit:contain; }
+        .meta { color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>Liste des items</h1>
+
+    {% for item in items %}
+        <div class="item">
+            <h2>{{ item.Title if item.Title else "Sans titre" }}</h2>
+            <div class="meta">Id: {{ item.Id }}</div>
+
+            {% if item.local_image %}
+                <img class="thumb" src="{{ item.local_image }}" alt="{{ item.Title if item.Title else 'image' }}">
+            {% else %}
+                <p><em>Aucune image locale trouvée pour cet item</em></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</body>
+</html>
