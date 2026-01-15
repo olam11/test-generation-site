@@ -6,9 +6,7 @@ on:
   workflow_dispatch:
   repository_dispatch: 
     types: [nocodb_update]
-  schedule:
-    - cron: "0 6 * * *"
-
+    
 permissions:
   contents: write
   pages: write
